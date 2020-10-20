@@ -125,8 +125,8 @@ client.on('ready', () => {
 			var playlist = await youtube.getPlaylist(url);
 			var videos = await playlist.getVideos();
 			for (const video of Object.values(videos)) {
-				var video2 = await youtube.getVideoByID(video.id); // eslint-disable-line no-await-in-loop
-				await handleVideo(video2, message, voiceChannel, true); // eslint-disable-line no-await-in-loop
+				var video2 = await youtube.getVideoByID(video.id);
+				await handleVideo(video2, message, voiceChannel, true);
 			}
 			return message.channel.send(`<a:yes:597843252095221761> Playlist : **${playlist.title}** vient d'être ajoutée a la playlist avec succès !`);
 		} else {
@@ -141,7 +141,7 @@ __**Sélections des**__
 ${videos.map(video2 => `**${++index} •** ${video2.title}`).join('\n')}
 ***Entrer un chiffre entre 1 et 10 svp***
 					`);
-					// eslint-disable-next-line max-depth
+					
 					try {
 						var response = await message.channel.awaitMessages(message2 => message2.content > 0 && message2.content < 11, {
 							maxMatches: 1,
@@ -294,7 +294,7 @@ if(message.content.startsWith(prefix + "help")) {
 	console.log("Un utilisateur a effectuer la commande d'aide !")
 }
 
-if(message.content === prefix + "patch-notes"){
+if(message.content.startsWith(prefix + "patch-notes")){
 	var patchnote_embed = new Discord.RichEmbed()
 	.setColor("RANDOM")
 	.setTitle(`<a:loading:606280187469889589> | Patch notes version 1.0.1 d'Anaëlle`)
