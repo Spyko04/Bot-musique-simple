@@ -58,7 +58,7 @@ var musicplayer = "<:musicplayer:612411411624362053>"
 var linux = "<:linux:649406587546501165>"
 
 
-client.login("NjgwMTE2MzUxNDA2NDQwNDk5.Xk7N1w.RGz40KslLZzY1rUcuk8mbVU5CYU");
+client.login("votre token");
 
 
 client.on("guildCreate", (guild)=> {
